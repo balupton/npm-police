@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="police : policing the dependency packages versions" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>police</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pksunkara/npm-police">Fork Me on GitHub</a>
+
+          <h1 id="project_title">police</h1>
+          <h2 id="project_tagline">policing the dependency packages versions</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/pksunkara/npm-police/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/pksunkara/npm-police/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>A module dependency version policing tool. It goes through all your repositories on github which has package.json.
+Then it analyzes the dependencies and reports back to you about all the outdated packages.</p>
+
+<p>It also can suggest corrections to your package.json file in certain cases.</p>
+
+<p><img src="http://github.com/pksunkara/npm-police/raw/master/img/police-octonode.png" alt="Running" title="Running"></p>
+
+<h2>Installation</h2>
+
+<p>Install police globally from npm registry by typing the following command</p>
+
+<pre><code>npm install police -g
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>For the first time after you installed police, you need to authenticate yourself to <a href="http://github.com">github</a>.
+This is a one-time step</p>
+
+<pre><code>police auth
+</code></pre>
+
+<p>We will not save your <a href="http://github.com">github</a> password anywhere. A token which we acquire during the authentication will be used thereafter. And it will be saved in a file with permissions <code>0600</code></p>
+
+<div class="highlight">
+<pre><span class="c"># To police your module dependencies</span>
+police
+
+<span class="c"># To police a particular module </span>
+<span class="c"># (You should give the repository name)</span>
+police octonode
+
+<span class="c"># To police another user/org module dependencies</span>
+police -u flatiron
+
+<span class="c"># To police a particular module of another user/org</span>
+<span class="c"># (You should give the repository name)</span>
+police flatiron/plates
+
+<span class="c"># To police a local module or package.json file</span>
+police -l ~/octonode
+police -l ~/octonode/package.json
+
+<span class="c"># To continue checking even though errors are encountered</span>
+<span class="c"># (Doesnt work with -l)</span>
+police -f
+police -u flatiron -f
+
+<span class="c"># To edit all the fields in package.json</span>
+<span class="c"># (Doesnt work with -l)</span>
+police -e
+
+<span class="c"># To add the missing fields to package.json</span>
+<span class="c"># (Doesnt work with -l)</span>
+police -a
+
+<span class="c"># To update dependencies in package.json</span>
+police -t
+</pre>
+</div>
+
+
+<p>Given below are some ideal commands to help you.</p>
+
+<div class="highlight">
+<pre><span class="c"># An ideal police command for github user for the first time on a module</span>
+police -f -e -t
+
+<span class="c"># An ideal police command for github user</span>
+police -f -a -t
+
+<span class="c"># An ideal police command locally</span>
+police -l ~/octonode -t
+</pre>
+</div>
+
+
+<p>The token which we acquied during auth will be stored in <code>$HOME/.policeconf</code>.</p>
+
+<p>If you want to use another config file, try the following.</p>
+
+<pre><code>police octonode --conf /etc/policeconf
+police octonode --conf ~/.conf
+</code></pre>
+
+<p>If you want to destory your token, you can use</p>
+
+<pre><code>police -d
+police --destroy
+</code></pre>
+
+<p>Calling police with help option will display all the above</p>
+
+<pre><code>police -h
+police --help
+</code></pre>
+
+<p><img src="http://github.com/pksunkara/npm-police/raw/master/img/police-help.png" alt="Help" title="Help"></p>
+
+<h2>TODO</h2>
+
+<ul>
+<li>Option to isolate dependency checking and suggestions</li>
+<li>Support multiple npm registries (custom)</li>
+<li>Display progress bar instead of listing the dependencies (use charm)</li>
+<li>Caching package.json blobs per commit</li>
+<li>Start using <a href="http://github.com/pksunkara/octonode">octonode</a> module</li>
+<li>Command for setting and deleting configurations</li>
+</ul><h2>Bug Reports</h2>
+
+<p>Report <a href="http://github.com/pksunkara/npm-police/issues">here</a>. <strong>Guaranteed reply within a day</strong>.</p>
+
+<h2>Contact</h2>
+
+<p>Pavan Kumar Sunkara (pavan.sss1991@gmail.com)</p>
+
+<p>Follow me on <a href="http://github.com/pksunkara">github</a>, <a href="http://twitter.com/pksunkara">twitter</a></p>
+
+<p>Concept by: <a href="http://github.com/mwawrusch">Martin Wawrusch</a> (martin@wawrusch.com)</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">police maintained by <a href="https://github.com/pksunkara">pksunkara</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-9209860-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
