@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="police : policing the dependency packages versions" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>police</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>police by pksunkara</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pksunkara/npm-police">Fork Me on GitHub</a>
-
-          <h1 id="project_title">police</h1>
-          <h2 id="project_tagline">policing the dependency packages versions</h2>
-
-          <section id="downloads">
-            <a class="zip_download_link" href="https://github.com/pksunkara/npm-police/zipball/master">Download this project as a .zip file</a>
-            <a class="tar_download_link" href="https://github.com/pksunkara/npm-police/tarball/master">Download this project as a tar.gz file</a>
-          </section>
+        <header>
+          <h1>police</h1>
+          <h2>policing the dependency packages versions</h2>
         </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>A module dependency version policing tool. It goes through all your repositories on github which has package.json.
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/pksunkara/npm-police/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/pksunkara/npm-police/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/pksunkara/npm-police" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p>A module dependency version policing tool. It goes through all your repositories on github which has package.json.
 Then it analyzes the dependencies and reports back to you about all the outdated packages.</p>
 
 <p>It also can suggest corrections to your package.json file in certain cases.</p>
@@ -55,8 +55,7 @@ This is a one-time step</p>
 
 <p>We will not save your <a href="http://github.com">github</a> password anywhere. A token which we acquire during the authentication will be used thereafter. And it will be saved in a file with permissions <code>0600</code></p>
 
-<div class="highlight">
-<pre><span class="c"># To police your module dependencies</span>
+<div class="highlight"><pre><span class="c"># To police your module dependencies</span>
 police
 
 <span class="c"># To police a particular module </span>
@@ -89,14 +88,11 @@ police -a
 
 <span class="c"># To update dependencies in package.json</span>
 police -t
-</pre>
-</div>
-
+</pre></div>
 
 <p>Given below are some ideal commands to help you.</p>
 
-<div class="highlight">
-<pre><span class="c"># An ideal police command for github user for the first time on a module</span>
+<div class="highlight"><pre><span class="c"># An ideal police command for github user for the first time on a module</span>
 police -f -e -t
 
 <span class="c"># An ideal police command for github user</span>
@@ -104,9 +100,7 @@ police -f -a -t
 
 <span class="c"># An ideal police command locally</span>
 police -l ~/octonode -t
-</pre>
-</div>
-
+</pre></div>
 
 <p>The token which we acquied during auth will be stored in <code>$HOME/.policeconf</code>.</p>
 
@@ -145,23 +139,19 @@ police --help
 
 <h2>Contact</h2>
 
-<p>Pavan Kumar Sunkara (pavan.sss1991@gmail.com)</p>
+<p>Pavan Kumar Sunkara (<a href="mailto:pavan.sss1991@gmail.com">pavan.sss1991@gmail.com</a>)</p>
 
 <p>Follow me on <a href="http://github.com/pksunkara">github</a>, <a href="http://twitter.com/pksunkara">twitter</a></p>
 
-<p>Concept by: <a href="http://github.com/mwawrusch">Martin Wawrusch</a> (martin@wawrusch.com)</p>
-      </section>
-    </div>
+<p>Concept by: <a href="http://github.com/mwawrusch">Martin Wawrusch</a> (<a href="mailto:martin@wawrusch.com">martin@wawrusch.com</a>)</p>
+        </section>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">police maintained by <a href="https://github.com/pksunkara">pksunkara</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+        <footer>
+          police is maintained by <a href="https://github.com/pksunkara">pksunkara</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-              <script type="text/javascript">
+                  <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -172,6 +162,7 @@ police --help
             } catch(err) {}
           </script>
 
-
+      </div>
+    </div>
   </body>
 </html>
